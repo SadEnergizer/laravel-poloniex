@@ -63,6 +63,20 @@ class Client implements ClientContract
             'currencyPair' => strtoupper($pair)
         ]);
     }
+    
+     /**
+     * Get order trades.
+     *
+     * @param string $pair
+     * @return mixed
+     */
+    public function getOrderTrades($id)
+    {
+        return $this->trading([
+            'command' => 'returnOrderTrades',
+            'orderNumber' => $id
+        ]);
+    }
 
     /**
      * Get my trade history.
