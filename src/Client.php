@@ -363,7 +363,7 @@ class Client implements ClientContract
         $response = curl_exec($ch);
 
         if ($response === false) {
-            throw new Exception('Curl error: '.curl_error($ch));
+            return null;
         }
 
         return json_decode($response, true);
